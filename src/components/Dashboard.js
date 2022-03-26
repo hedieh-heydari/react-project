@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Row, Col, Container} from 'reactstrap'
 
 
 //components
@@ -10,15 +10,22 @@ import Main from './Main';
 
 const Dashboard = () => {
     return (
-        <div>
+        <>
             <Navigation/>
-            <div style={{display: "flex"}}>
-            <Main/>
-            <Sidebar/>
-            </div>
             
+            <Container>
+                <Row>
+                <Col>
+                    <Sidebar />
+                </Col>
+                <Col>
+                    <Main/>
+                </Col>
+                </Row>  
+            </Container>
+
             <Footer/>
-        </div>
+         </>
     );
 };
 
