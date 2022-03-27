@@ -1,11 +1,9 @@
 import React from 'react';
-import styles from './Footer.module.css';
-// import {Footer} from 'reactstrap'
 
 const Footer = () => {
     return (
-        <div className={styles.footer}>
-            All right Reserved
+        <div className="bg-info text-center text-dark ">
+           <p> All right Reserved</p>
         </div>
     );
 };

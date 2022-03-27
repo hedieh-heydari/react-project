@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col, Container} from 'reactstrap'
+import {Row, Col} from 'reactstrap'
 
 
 //components
@@ -13,16 +13,16 @@ const Dashboard = () => {
         <>
             <Navigation/>
             
-            <Container>
+            {/* <ContainerFluid> */}
                 <Row>
-                <Col>
+                <Col className="md-3 lg-4 bg-secendary">
                     <Sidebar />
                 </Col>
-                <Col>
+                <Col className="md-9 lg-8 bg-info">
                     <Main/>
                 </Col>
                 </Row>  
-            </Container>
+            {/* </ContainerFluid> */}
 
             <Footer/>
          </>
