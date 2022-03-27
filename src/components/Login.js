@@ -1,13 +1,15 @@
 import React from 'react';
 import {Container, Button, Form, FormGroup, InputGroup, Input, InputGroupText} from 'reactstrap';
-import styles from './Login.module.css';
 import {BiUser} from 'react-icons/bi';
 import {VscLock} from 'react-icons/vsc';
 import {Link} from 'react-router-dom'
 
 const Login = () => {
+    const linkStyle = {
+        textDecoration: "none"
+    }
     return (
-        <Container d-flex justify-content-center align-items-center>
+        <Container className="d-flex justify-content-center align-content-center mt-5">
             <Form>
                 <FormGroup>
                     <InputGroup >
@@ -21,7 +23,7 @@ const Login = () => {
                     <Input  type="password" placeholder='password...' />
                     </InputGroup>
                 </FormGroup>
-                <Link to="/dashboard" className={styles.link}>
+                <Link to="/dashboard" style={linkStyle}>
                     <Button block color='info'>Login</Button>
                 </Link>
             </Form>
