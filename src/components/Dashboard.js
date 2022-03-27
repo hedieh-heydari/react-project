@@ -12,17 +12,15 @@ const Dashboard = () => {
     return (
         <>
             <Navigation/>
-            
-            {/* <ContainerFluid> */}
+
                 <Row>
-                <Col className="md-3 lg-4 bg-secendary">
+                <Col className="col-sm-2 col-md-3">
                     <Sidebar />
                 </Col>
-                <Col className="md-9 lg-8 bg-info">
+                <Col className="col-sm-10 col-md-9 ">
                     <Main/>
                 </Col>
                 </Row>  
-            {/* </ContainerFluid> */}
 
             <Footer/>
          </>
