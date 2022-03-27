@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
-import {Form, Button, Container,Input, Label, FormGroup} from 'reactstrap';
+import {Form, Button, Container,Input, Label, FormGroup, Table} from 'reactstrap';
+import {v4} from 'uuid';
 
 
 
 
 const Main = () => {
-    const [title, setTitle] = useState('');
-    const [desc, setDesc] = useState('');
+    const [title, setTitle] = useState([]);
+    const [desc, setDesc] = useState([]);
+    const [store, setStore] = useState([]);
 
     const clickHandler = e => {
-        e.preventDefault();
-       console.log(title);
-       console.log(desc);
+     e.preventDefault();
+     setStore([...store, {title, desc}]);
     }
  
     return (
@@ -30,9 +31,32 @@ const Main = () => {
         </Form>
     </Container>
 
-
+        
     <Container>
-
+        {
+            <Table className='mt-3'>
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    store.length > 0 &&
+                    store.map(item => {
+                        return(
+                        <tr key={v4()}>
+                        <td>{item.title}</td>
+                        <td>{item.desc}</td>
+                        </tr>
+                        )
+                    })
+                }
+            </tbody>
+        </Table> 
+        }
+        
      </Container>
 
 
