@@ -6,7 +6,7 @@ import {Row, Col} from 'reactstrap'
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
-import Main from './Main';
+import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
@@ -18,11 +18,12 @@ const Dashboard = () => {
                     <Sidebar />
                 </Col>
                 <Col className="col-sm-10 col-md-9 ">
-                    <Main/>
+                    <Outlet/>
                 </Col>
                 </Row>  
 
             <Footer/>
+          
          </>
     );
 };

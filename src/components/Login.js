@@ -23,7 +23,7 @@ const Login = () => {
                     <Input  type="password" placeholder='password...' />
                     </InputGroup>
                 </FormGroup>
-                <Link to="/dashboard" style={linkStyle}>
+                <Link to="/dashboard/main" style={linkStyle}>
                     <Button block color='info'>Login</Button>
                 </Link>
             </Form>
