@@ -13,6 +13,8 @@ const Main = () => {
     const clickHandler = e => {
      e.preventDefault();
      setStore([...store, {title, desc}]);
+     setTitle("");
+     setDesc("");
     }
  
     return (
@@ -20,7 +22,7 @@ const Main = () => {
         <Container>
             <Row className='mt-3 mb-3'>
               <Col className='col-sm-12 col-md-6'>
-                  <Card>
+                  <Card className='border-0'>
                   <Form>
                   <FormGroup>
                           <Label className='form-label' for='title'>Enter title</Label>
