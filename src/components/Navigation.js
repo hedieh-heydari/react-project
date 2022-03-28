@@ -7,14 +7,14 @@ const Navigation = () => {
     return (
         <div>
             <Navbar color="info" >
-                 <Nav>
-                    <NavItem>
-                        <NavLink>
-                            <Link  className='text-dark' style={{textDecoration:"none"}} to='main'>Homepage</Link>
-                        </NavLink>
+                 <Nav className='justify-items-center align-items-center m-1'>
+                    <NavItem>  
+                        <Link to='main'  style={{textDecoration:"none"}} className='text-dark'>
+                             Homepage
+                        </Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='text-dark ' >Link 1</NavLink>
+                        <NavLink to='#' className='text-dark ' >Link 1</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='text-dark' >Link 2 </NavLink>

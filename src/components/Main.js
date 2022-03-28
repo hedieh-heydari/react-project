@@ -5,7 +5,7 @@ import {v4} from 'uuid';
 
 
 
-const Main = () => {
+const Main = (props) => {
     const [title, setTitle] = useState([]);
     const [desc, setDesc] = useState([]);
     const [store, setStore] = useState([]);
@@ -22,6 +22,7 @@ const Main = () => {
         <Container>
             <Row className='mt-3 mb-3'>
               <Col className='col-sm-12 col-md-6'>
+                  <h5>add post</h5>
                   <Card className='border-0'>
                   <Form>
                   <FormGroup>
@@ -37,7 +38,8 @@ const Main = () => {
                   </Card>
               </Col>
               <Col className='col-sm-12 col-md-6'>
-                      {
+                  <h5>latest posts</h5>
+
                   <Table className='mt-3'>
                   <thead>
                       <tr>
@@ -59,7 +61,6 @@ const Main = () => {
                       }
                   </tbody>
               </Table> 
-              }
              </Col>
              </Row>
         </Container>

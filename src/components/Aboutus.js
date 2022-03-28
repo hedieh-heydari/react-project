@@ -8,7 +8,7 @@ const Aboutus = () => {
         <Container className='mt-5'>
             <Row>
                 <Col className='col-sm-12 col-md-6'>
-                    <h3>About us page</h3>
+                    <h3>About us</h3>
                     <p>CEO:</p>
                     <p>employees:</p>
                 </Col>
