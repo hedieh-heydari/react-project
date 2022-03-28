@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Form, Button, Container,Input, Label, FormGroup, Table, Card, Row, Col} from 'reactstrap';
 import {v4} from 'uuid';
 
@@ -15,8 +15,14 @@ const Main = (props) => {
      setStore([...store, {title, desc}]);
      setTitle("");
      setDesc("");
+
+     localStorage.setItem("data", JSON.stringify([...store, {title, desc}]))
     }
  
+    useEffect(()=>{
+    setStore(JSON.parse(localStorage.getItem("data")))
+    },[]);
+
     return (
         <>
         <Container>
@@ -50,7 +56,7 @@ const Main = (props) => {
                   <tbody>
                       {
                           store.length > 0 &&
-                          store.map(item => {
+                         store.map(item => {
                               return(
                               <tr key={v4()}>
                               <td>{item.title}</td>
@@ -61,6 +67,12 @@ const Main = (props) => {
                       }
                   </tbody>
               </Table> 
+              {
+
+                  console.log(JSON.parse(localStorage.getItem("data")))
+              }
+                
+              
              </Col>
              </Row>
         </Container>

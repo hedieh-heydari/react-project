@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Table, Container } from 'reactstrap';
+// import { v4 } from 'uuid';
+
+
 
  
-const Posts = () => {
+const Posts = ({title, desc, store, settitle, setDesc, setStore}) => {
+
+    // useEffect(()=>{
+    //     setStore(JSON.parse(localStorage.getItem("data")))
+    //     },[]);
+
     return (
        <>
        <Container>
@@ -15,6 +23,17 @@ const Posts = () => {
                       </tr>
                   </thead>
                   <tbody>
+                      {/* { 
+                        store.lenght > 0 &&
+                         store.map(item => {
+                              return(
+                              <tr key={v4()}>
+                              <td>{item.title}</td>
+                              <td>{item.desc}</td>
+                              </tr>
+                              )
+                          })
+                      } */}
                   </tbody>
               </Table>
        </Container>
