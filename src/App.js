@@ -3,9 +3,8 @@ import {Routes, Route} from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Aboutus from './components/Aboutus';
 import Posts from './components/Posts';
-import Addpost from './components/Addpost';
 import Main from './components/Main';
-
+import EditPost from './components/EditPost';
 
 function App() {
   return (
@@ -14,11 +13,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/editpost' element={<EditPost/>} />
           <Route path='/dashboard/*' element={<Dashboard/>}>
             <Route path='main' element={<Main/>}/>
-            <Route path='addpost' element={<Addpost/>}/>
-            <Route path='posts' element={<Posts/>}/>
             <Route path='aboutus' element={<Aboutus/>}/>
+            <Route path='posts' element={<Posts/>}/>
+            
            </Route>
         </Routes>
         </div>

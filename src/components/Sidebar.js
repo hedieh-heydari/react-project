@@ -13,9 +13,6 @@ const Sidebar = () => {
                     <Link to='posts' className='text-dark' style={linkStyle}>Posts</Link>
                 </Row>
                 <Row className='mb-2'>
-                    <Link to='addpost' className='text-dark' style={linkStyle}>Add post</Link>
-                </Row>
-                <Row className='mb-2'>
                     <Link to='aboutus' className='text-dark' style={linkStyle}>About us</Link>
                 </Row>
             </Col>
