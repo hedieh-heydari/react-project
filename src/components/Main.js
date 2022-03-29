@@ -22,6 +22,7 @@ const Main = (props) => {
     useEffect(()=>{
     setStore(JSON.parse(localStorage.getItem("data")))
     },[]);
+    console.log(store)
 
     return (
         <>
@@ -67,12 +68,6 @@ const Main = (props) => {
                       }
                   </tbody>
               </Table> 
-              {
-
-                  console.log(JSON.parse(localStorage.getItem("data")))
-              }
-                
-              
              </Col>
              </Row>
         </Container>

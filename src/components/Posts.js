@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { Table, Container } from 'reactstrap';
-// import { v4 } from 'uuid';
+import { v4 } from 'uuid';
 
+const Posts = () => {
 
+    const [data,setData] = useState([]);
 
- 
-const Posts = ({title, desc, store, settitle, setDesc, setStore}) => {
-
-    // useEffect(()=>{
-    //     setStore(JSON.parse(localStorage.getItem("data")))
-    //     },[]);
+    useEffect(()=>{
+        setData(JSON.parse(localStorage.getItem("data")))
+     },[]);
 
     return (
        <>
        <Container>
        <h3>posts</h3>
-                  <Table className='mt-3'>
+       <Table className='mt-3'>
                   <thead>
                       <tr>
                           <th>title</th>
@@ -23,9 +22,9 @@ const Posts = ({title, desc, store, settitle, setDesc, setStore}) => {
                       </tr>
                   </thead>
                   <tbody>
-                      {/* { 
-                        store.lenght > 0 &&
-                         store.map(item => {
+                      {
+                          data.length > 0 &&
+                         data.map(item => {
                               return(
                               <tr key={v4()}>
                               <td>{item.title}</td>
@@ -33,9 +32,9 @@ const Posts = ({title, desc, store, settitle, setDesc, setStore}) => {
                               </tr>
                               )
                           })
-                      } */}
+                      }
                   </tbody>
-              </Table>
+              </Table> 
        </Container>
        </>
     );
