@@ -2,10 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Form, Button, Container,Input, Label, FormGroup, Table, Card, Row, Col} from 'reactstrap';
 import {v4} from 'uuid';
 
-
-
-
-const Main = () => {
+const Main = (props) => {
     const [title, setTitle] = useState([]);
     const [desc, setDesc] = useState([]);
     const [store, setStore] = useState([]);

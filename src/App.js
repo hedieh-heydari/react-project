@@ -13,11 +13,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/editpost' element={<EditPost/>} />
           <Route path='/dashboard/*' element={<Dashboard/>}>
             <Route path='main' element={<Main/>}/>
             <Route path='aboutus' element={<Aboutus/>}/>
-            <Route path='posts' element={<Posts/>}/>
+            <Route path='posts' element={<Posts/>}>
+             <Route path='editpost' element={<EditPost/>} />
+            </Route>
             
            </Route>
         </Routes>
