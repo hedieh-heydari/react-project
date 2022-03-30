@@ -3,6 +3,7 @@ import { Table, Container, Button } from 'reactstrap';
 import { v4 } from 'uuid';
 import {VscTrash, VscEdit} from 'react-icons/vsc'
 import { Link, Outlet  } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Posts = () => {
 
@@ -13,8 +14,9 @@ const Posts = () => {
      },[]);
 
         const removeHandler = title=>{
+            toast('post deleted')
             let newData = [];
-            data.forEach(item=>{
+            data.forEach(item=>{                     
                     if(item.title !== title){
                         newData.push(item);
                     }
@@ -23,15 +25,20 @@ const Posts = () => {
             setData(JSON.parse(localStorage.getItem("data")));
         }
 
-     const editHandler = () => {
-        console.log("edit");
-     }
+     const editHandler = title => {
+         data.forEach(item => {
+             if(title === item.title) {
+                 setData(item)
+                }
+            })
+            console.log(data);
+        }
 
     return (
        <>
        <Container>
        <h3>posts</h3>
-       <Table className='mt-3 table-striped'>
+       <Table className='mt-3 table-striped'> 
                   <thead>
                       <tr>
                           <th>title</th>
@@ -55,10 +62,11 @@ const Posts = () => {
                               </td>
                               </tr>
                               )
-                          })
-                      }
+                            })
+                        }
                   </tbody>
               </Table> 
+                        <ToastContainer/>
               <Outlet/>
        </Container>
        </>

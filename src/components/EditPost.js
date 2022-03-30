@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+// import { ToastContainer, toast } from 'react-toastify';
 
-
-const EditPost = ({title, desc, setTitle, setDesc}) => {
+const EditPost = () => {
     const linkStyle = {
         textDecoration: "none"
     }
-    // const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
     // setData(JSON.parse(localStorage.getItem("data")));
 
     const clickHandler =(event => {
         event.preventDefault();
+        // toast("post deleted")
 
         // data.foreach((item, index) => {
         //     if (event.id === item.id) {
@@ -27,17 +28,17 @@ const EditPost = ({title, desc, setTitle, setDesc}) => {
           <Form>
           <FormGroup>
                   <Label className='form-label' for='title'>Enter new title</Label>
-                  <Input value={title} onChange={e=>setTitle(e.target.value)} id='title' name='title'  type="text" placeholder='title' />
+                  <Input  id='title' name='title'  type="text" placeholder='title' />
           </FormGroup>
           <FormGroup>
                   <Label className='form-label' for='description'>Enter new description</Label>
-                  <Input value={desc} onChange={e=>setDesc(e.target.value)} id='description' name='description' type="text" placeholder='description' />
+                  <Input  id='description' name='description' type="text" placeholder='description' />
           </FormGroup>
           <Button className='mb-3' onClick={clickHandler} type='submit' color='info'>
-              <Link style={linkStyle} className='text-dark' to='/dashboard/main'> Submit</Link>
+              <Link style={linkStyle} className='text-dark' to='/dashboard/posts'> Submit</Link>
           </Button>
           </Form>
-        
+          {/* <ToastContainer/> */}
         </>
     );
 };

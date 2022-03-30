@@ -4,11 +4,13 @@ import {BiUser} from 'react-icons/bi';
 import {VscLock} from 'react-icons/vsc';
 import {Link} from 'react-router-dom'
 
+
 const Login = () => {
     const linkStyle = {
         textDecoration: "none"
     }
     return (
+    <>
         <Container className="d-flex justify-content-center align-content-center mt-5">
             <Form>
                 <FormGroup>
@@ -28,6 +30,7 @@ const Login = () => {
                 </Link>
             </Form>
         </Container>
+    </>
     );
 };
 

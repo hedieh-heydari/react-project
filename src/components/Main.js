@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Form, Button, Container,Input, Label, FormGroup, Table, Card, Row, Col} from 'reactstrap';
 import {v4} from 'uuid';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Main = (props) => {
     const [title, setTitle] = useState([]);
@@ -14,6 +15,8 @@ const Main = (props) => {
      setDesc("");
 
      localStorage.setItem("data", JSON.stringify([...store, {title, desc}]))
+
+     toast('post added')
     }
  
     useEffect(()=>{
@@ -25,7 +28,7 @@ const Main = (props) => {
         <>
         <Container>
             <Row className='mt-3 mb-3'>
-              <Col className='col-sm-12 col-md-6'>
+              <Col className='col-sm-12 col-md-6 mb-sm-5'>
                   <h5>add post</h5>
                   <Card className='border-0'>
                   <Form>
@@ -38,6 +41,7 @@ const Main = (props) => {
                           <Input id='description' name='description' onChange={e => setDesc(e.target.value)} value={desc} type="text" placeholder='description' />
                   </FormGroup>
                   <Button onClick={clickHandler} type='submit' color='info'>Submit</Button>
+                  <ToastContainer/>
                   </Form>
                   </Card>
               </Col>
