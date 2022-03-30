@@ -16,8 +16,8 @@ function App() {
           <Route path='/dashboard/*' element={<Dashboard/>}>
             <Route path='main' element={<Main/>}/>
             <Route path='aboutus' element={<Aboutus/>}/>
-            <Route path='posts' element={<Posts/>}>
-             <Route path='editpost' element={<EditPost/>} />
+            <Route path='posts' exact element={<Posts/>}>
+             <Route path='editpost/:title'exact  element={<EditPost/>} />
             </Route>
             
            </Route>

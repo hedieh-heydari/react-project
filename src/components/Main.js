@@ -20,7 +20,7 @@ const Main = (props) => {
     }
  
     useEffect(()=>{
-    setStore(JSON.parse(localStorage.getItem("data")))
+    localStorage.getItem('data') && setStore(JSON.parse(localStorage.getItem("data")))
     },[]);
     console.log(store)
 
