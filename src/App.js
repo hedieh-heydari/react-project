@@ -19,6 +19,7 @@ function App() {
             <Route path='posts' exact element={<Posts/>}>
              <Route path='editpost/:title'exact  element={<EditPost/>} />
             </Route>
+                      
             
            </Route>
         </Routes>

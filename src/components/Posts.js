@@ -25,14 +25,7 @@ const Posts = () => {
             setData(JSON.parse(localStorage.getItem("data")));
         }
         
-        const editHandler = title => {
-            data.forEach(item => {
-                if(item.title === title) {
-                    setData(item)
-                }
-            })
-            console.log(data)
-        }
+   
 
     return (
        <>
@@ -55,7 +48,7 @@ const Posts = () => {
                               <td>{item.title}</td>
                               <td>{item.desc}</td>
                               <td>
-                              <Button onClick={()=>editHandler(item)} className='me-2 btn-light btn-outline-info'>
+                              <Button className='me-2 btn-light btn-outline-info'>
                                   <Link to={`editpost/${item.title}`}><VscEdit/></Link>
                              </Button>
                               <Button onClick={()=>removeHandler(item.title)} className='me-2 btn-light btn-outline-info'> <VscTrash/></Button>

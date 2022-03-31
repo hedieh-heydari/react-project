@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link, useParams } from 'react-router-dom';
-// import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const EditPost = () => {
     const linkStyle = {
         textDecoration: "none"
     }
     const [data, setData] = useState([]);
-    
     const [formInfo,setFormInfo] = useState({});
-
     const newData=[];
 
    // Get title from url
@@ -18,47 +16,34 @@ const EditPost = () => {
 
     const clickHandler =(event => {
         event.preventDefault();
-       
+        toast('psot updated')
 
         // data==localstorage (farghi nadare kodum ro bezari)
-        
         data.forEach((item,index)=>{
          
-            if(item.title!=title){
+            if(item.title!==title){
                 newData.push(item);
             }
-              
         });
-
         newData.push(formInfo); 
         setData(newData);
-
-
-
         localStorage.setItem('data',JSON.stringify(newData));
-
-
     });
-
 
     useEffect(()=>{
 
         setData(JSON.parse(localStorage.getItem("data")));
 
         // Find record
-
         JSON.parse(localStorage.getItem("data")).forEach((item,index)=>{
-            if(item.title==title){
+            if(item.title===title){
               // For show in inputs
                 setFormInfo(item);
-
             }
         });
-
     },[]);
 
 
-  
     return (
         <>
          <h3>Edit your post</h3>
@@ -75,7 +60,7 @@ const EditPost = () => {
               <Link style={linkStyle} className='text-dark' to='/dashboard/posts'> Submit</Link>
           </Button>
           </Form>
-          {/* <ToastContainer/> */}
+          <ToastContainer/>
         </>
     );
 };
